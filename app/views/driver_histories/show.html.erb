@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date of incidient:</strong>
+  <%= @driver_history.date_of_incidient %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @driver_history.value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @driver_history.description %>
+</p>
+
+<p>
+  <strong>Incident type:</strong>
+  <%= @driver_history.incident_type %>
+</p>
+
+<%= link_to 'Edit', edit_driver_history_path(@driver_history) %> |
+<%= link_to 'Back', driver_histories_path %>

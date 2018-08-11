@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Driver Histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date of incident</th>
+      <th>Value</th>
+      <th>Description</th>
+      <th>Incident type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @driver_histories.each do |driver_history| %>
+      <tr>
+        <td><%= driver_history.date_of_incident %></td>
+        <td><%= driver_history.value %></td>
+        <td><%= driver_history.description %></td>
+        <td><%= driver_history.incident_type %></td>
+        <td><%= link_to 'Show', driver_history %></td>
+        <td><%= link_to 'Edit', edit_driver_history_path(driver_history) %></td>
+        <td><%= link_to 'Destroy', driver_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Driver History', new_driver_history_path %>

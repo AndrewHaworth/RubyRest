@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @person.title %>
+</p>
+
+<p>
+  <strong>Forename:</strong>
+  <%= @person.forename %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @person.surname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @person.email %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @person.telephone %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @person.date_of_birth %>
+</p>
+
+<p>
+  <strong>License type:</strong>
+  <%= @person.license_type %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @person.occupation %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @person.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @person.city %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @person.county %>
+</p>
+
+<p>
+  <strong>License period:</strong>
+  <%= @person.license_period %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @person.postcode %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

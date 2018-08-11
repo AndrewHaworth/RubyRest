@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @vehicle.registration %>
+</p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @vehicle.mileage %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @vehicle.value %>
+</p>
+
+<p>
+  <strong>Parking location:</strong>
+  <%= @vehicle.parking_location %>
+</p>
+
+<p>
+  <strong>Policy start:</strong>
+  <%= @vehicle.policy_start %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>

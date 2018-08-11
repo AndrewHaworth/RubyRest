@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Registration</th>
+      <th>Mileage</th>
+      <th>Value</th>
+      <th>Parking location</th>
+      <th>Policy start</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.registration %></td>
+        <td><%= vehicle.mileage %></td>
+        <td><%= vehicle.value %></td>
+        <td><%= vehicle.parking_location %></td>
+        <td><%= vehicle.policy_start %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %>

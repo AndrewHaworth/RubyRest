@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_of_incidient: 2018-08-11
+  value: 1
+  description: MyText
+  incident_type: MyString
+
+two:
+  date_of_incidient: 2018-08-11
+  value: 1
+  description: MyText
+  incident_type: MyString
