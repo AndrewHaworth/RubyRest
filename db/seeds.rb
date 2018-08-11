@@ -42,9 +42,6 @@
 	})
 
 	Quote.create({
-		vehicle: vehicle,
-		driver_history: driver_history,
-		person: person,
 		date_created: Date.today,
 		premium: (vehicle.value + vehicle.mileage - driver_history.value)
 	})
