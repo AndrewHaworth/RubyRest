@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_145611) do
+ActiveRecord::Schema.define(version: 2018_08_13_141413) do
 
   create_table "driver_histories", force: :cascade do |t|
     t.date "date_of_incident"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 2018_08_11_145611) do
     t.integer "premium"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "person_id"
+    t.integer "vehicle_id"
+    t.integer "driver_history_id"
+    t.index ["driver_history_id"], name: "index_quotes_on_driver_history_id"
+    t.index ["person_id"], name: "index_quotes_on_person_id"
+    t.index ["vehicle_id"], name: "index_quotes_on_vehicle_id"
   end
 
   create_table "vehicles", force: :cascade do |t|
