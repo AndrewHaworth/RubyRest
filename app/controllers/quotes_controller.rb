@@ -25,10 +25,7 @@ class QuotesController < ApplicationController
 	end
 
 	# POST /quotes
-
-	# This method creates a new Quote based on a person's statistics, 
-	# whilst also retaining foreign keys so that it may be later retrieved
-	# if a "log in" feature is implemented in the future
+	# Create has been updated to fit with my 2 webpage design, where all the models are created on 1 page, and showing the quote created once the details have been entered. This passes parameters entered on the page into the quote's update function. Weird side effect, instead of adding the numbers, it concatenates the numbers. Ruby is strange.
 	def create
 		@quote = Quote.new(quote_params)
 		@quote.update((quote_params[:vehicle_attributes][:value])+(quote_params[:driver_history_attributes][:value])+(quote_params[:vehicle_attributes][:mileage]))

@@ -5,7 +5,9 @@
 <!--<%= render 'form', quote: @quote %>
 
 <%= link_to 'Back', quotes_path %>-->
-
+<!--
+	For this view, any and all errors from any of the models missing validates_presence_of requirements are caught, one of the challenges I was worried about when creating this project. It also pushes all parameters through Quotes, so that Quote may fetch the parameters it needs to calculate the premium, before going off to create their respective objects.
+-->
 <%= form_for @quote do |f| %>
 	<% if @quote.errors.any? %>
 		<div id="error_explanation">
