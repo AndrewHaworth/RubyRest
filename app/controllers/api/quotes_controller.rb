@@ -17,10 +17,7 @@ class QuotesController < ApplicationController
 
   # POST /quotes
   def create
-    quote = Quote.new(quote_params)
-    quote.person = Person.find_by person_id: params[:person_id]
-    quote.vehicle = Vehicle.find_by vehicle_id: params[:vehicle_id]
-    quote.driver_history = DriverHistory.find_by driver_history_id: params[:driver_history_id]
+    quote = Quote.new(quote_params) 
     if quote.save  
     render json: {istatus: 'SUCCESS', message:'Saved quote', data:quote},status: :ok
     else  
