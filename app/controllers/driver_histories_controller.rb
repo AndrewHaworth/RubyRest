@@ -28,7 +28,7 @@ class DriverHistoriesController < ApplicationController
 
     respond_to do |format|
       if @driver_history.save
-        format.html { redirect_to @driver_history, notice: 'Driver history was successfully created.' }
+        format.html { redirect_to quote_url(:new), notice: 'Driver history was successfully created.' }
         format.json { render :show, status: :created, location: @driver_history }
       else
         format.html { render :new }

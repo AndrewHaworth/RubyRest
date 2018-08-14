@@ -1,5 +1,5 @@
 <%= form_with(model: quote, local: true) do |form| %>
-  <% if quote.errors.any? %>
+ <% if quote.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
 

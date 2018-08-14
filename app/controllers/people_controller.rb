@@ -23,12 +23,14 @@ class PeopleController < ApplicationController
 
   # POST /people
   # POST /people.json
+  #
+  # When a new person is created, it will then prompt the user to create a new vehicle as well.
   def create
     @person = Person.new(person_params)
 
     respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
+	format.html { redirect_to vehicle_url(:new), notice: 'Person was successfully created.' }
         format.json { render :show, status: :created, location: @person }
       else
         format.html { render :new }

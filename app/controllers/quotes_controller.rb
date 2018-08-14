@@ -15,6 +15,9 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+    @quote.build_vehicle
+    @quote.build_person
+    @quote.build_driver_history
   end
 
   # GET /quotes/1/edit
@@ -27,10 +30,7 @@ class QuotesController < ApplicationController
   # whilst also retaining foreign keys so that it may be later retrieved
   # if a "log in" feature is implemented in the future
   def create
-    @quote = Quote.new(quote_params)
-    @quote.person = Person.find_by person_id: params[:person]
-    @quote.vehicle = Vehicle.find_by vehicle_id: params[:vehicle]
-    @quote.driver_history = DriverHistory.find_by driver_history_id: params[:driver_history]
+    @quote = Quote.new(quote_params)    
 
     respond_to do |format|
       if @quote.save
@@ -74,6 +74,6 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:date_created, :premium, :vehicle, :person, :driver_history)
+      params.require(:quote).permit(:date_created, :premium, vehicle_attributes:[:registration, :value, :parking_location, :mileage, :policy_start], driver_history_attributes:[:date_of_incident, :value, :description, :incident_type], person_attributes:[:title, :forename, :surname, :email, :license_period, :telephone, :date_of_birth, :license_type, :street, :city, :county, :postcode, :occupation])
     end
 end

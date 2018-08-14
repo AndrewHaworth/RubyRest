@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_13_141413) do
+ActiveRecord::Schema.define(version: 2018_08_14_053329) do
 
   create_table "driver_histories", force: :cascade do |t|
     t.date "date_of_incident"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_141413) do
     t.string "incident_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quote_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_141413) do
     t.string "postcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quote_id"
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -60,6 +62,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_141413) do
     t.date "policy_start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quote_id"
   end
 
 end

@@ -1,12 +1,7 @@
 class Quote < ApplicationRecord
-	validates_presence_of :premium
+	has_one :person
+	has_one :vehicle
+	has_one :driver_history
 
-	has_one :person,
-		dependent: :destroy
-
-	has_one :vehicle,
-		dependent: :destroy
-
-	has_one :driver_history,
-		dependent: :destroy
+	accepts_nested_attributes_for :person, :vehicle, :driver_history
 end

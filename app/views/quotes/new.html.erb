@@ -1,5 +1,121 @@
-<h1>New Quote</h1>
+<h1>Welcome to Andy's Insurance Quotations!</h1>
+<h2>Please enter your details below</h2>
+<h3>We promise not to steal and sell all your data</h3>
 
-<%= render 'form', quote: @quote %>
+<!--<%= render 'form', quote: @quote %>
 
-<%= link_to 'Back', quotes_path %>
+<%= link_to 'Back', quotes_path %>-->
+
+<%= form_for @quote do |f| %>
+	<% if @quote.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+			<ul>
+				<% @quote.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<b>Person</b>
+	<%= f.fields_for :person do |person| %>
+		<div class="field">
+			<%= person.label :title%>
+			<%= person.text_field :title%>
+		</div>
+		<div class="field">
+			<%= person.label :forename%>
+			<%= person.text_field :forename%>
+		</div>
+		<div class="field">
+			<%= person.label :surname%>
+			<%= person.text_field :surname%>
+		</div>
+		<div class="field">
+			<%= person.label :email%>
+			<%= person.text_field :email%>
+		</div>
+		<div class="field">
+			<%= person.label :license_period%>
+			<%= person.number_field :license_period%>
+		</div>
+		<div class="field">
+			<%= person.label :telephone%>
+			<%= person.text_field :telephone%>
+		</div>
+		<div class="field">
+			<%= person.label :date_of_birth%>
+			<%= person.date_select :date_of_birth%>
+		</div>
+		<div class="field">
+			<%= person.label :license_type%>
+			<%= person.text_field :license_type%>
+		</div>
+		<div class="field">
+			<%= person.label :street%>
+			<%= person.text_field :street%>
+		</div>
+		<div class="field">
+			<%= person.label :city%>
+			<%= person.text_field :city%>
+		</div>
+		<div class="field">
+			<%= person.label :county%>
+			<%= person.text_field :county%>
+		</div>
+		<div class="field">
+			<%= person.label :postcode%>	
+			<%= person.text_field :postcode%>
+		</div>
+		<div class="field">
+			<%= person.label :occupation%>
+			<%= person.text_field :occupation%>
+		</div>
+	<% end %>
+	<b>Vehicle</b>
+	<%= f.fields_for :vehicle do |vehicle|%>
+		<div class="field">
+			<%= vehicle.label :registration%>
+			<%= vehicle.text_field :registration%>
+		</div>
+		<div class="field">
+			<%= vehicle.label :mileage%>
+			<%= vehicle.number_field :mileage%>
+		</div>
+		<div class="field">
+			<%= vehicle.label :value%>
+			<%= vehicle.number_field :value%>
+		</div>
+		<div class="field">
+			<%= vehicle.label :parking_location%>
+			<%= vehicle.text_field :parking_location%>
+		</div>
+		<div class="field">
+			<%= vehicle.label :policy_start%>
+			<%= vehicle.date_select :policy_start%>
+		</div>
+	<% end %>
+	<b>Driver History</b>
+	<%= f.fields_for :driver_history do |driver_history|%>
+		<div class="field">
+			<%= driver_history.label :description%>
+			<%= driver_history.text_field :description%>
+		</div>
+		<div class="field">
+			<%= driver_history.label :incident_type%>		
+			<%= driver_history.text_field :incident_type%>
+		</div>
+		<div class="field">
+			<%= driver_history.label :date_of_incident%>	
+			<%= driver_history.date_select :date_of_incident%>
+		</div>
+		<div class="field">
+			<%= driver_history.label :value%>
+			<%= driver_history.number_field :value%>
+		</div>
+	<% end %>
+	<%= f.submit %>
+<% end %>
+
