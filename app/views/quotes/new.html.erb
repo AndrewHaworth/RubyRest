@@ -19,7 +19,7 @@
 		</div>
 	<% end %>
 
-	<b>Person</b>
+	<b>Person Insured</b>
 	<%= f.fields_for :person do |person| %>
 		<div class="field">
 			<%= person.label :title%>
@@ -74,7 +74,7 @@
 			<%= person.text_field :occupation%>
 		</div>
 	<% end %>
-	<b>Vehicle</b>
+	<b>Vehicle Details</b>
 	<%= f.fields_for :vehicle do |vehicle|%>
 		<div class="field">
 			<%= vehicle.label :registration%>
